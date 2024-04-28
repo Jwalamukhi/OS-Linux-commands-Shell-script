@@ -52,11 +52,13 @@ sumit chakrobarty
 
 cat < file2
 ## OUTPUT
+```
 anil aggarwal
 barun sengupta
 c.k.shukla
 lalit chowdury
 s.n.dasgupta
+```
 
 # Comparing Files
 cmp file1 file2
@@ -64,6 +66,7 @@ cmp file1 file2
 file1 file2 differ: char 1, line 1 
 comm file1 file2
  ## OUTPUT
+```
 anil aggarwal
         barun sengupta
         c.k.shukla
@@ -72,10 +75,12 @@ c.k.shukla
         lalit chowdury
                 s.n.dasgupta
 sumit chakrobarty
+```
 
  
 diff file1 file2
 ## OUTPUT
+```
 --- file1
 +++ file2
 @@ -1,4 +1,5 @@
@@ -86,6 +91,7 @@ diff file1 file2
 +lalit chowdury
  s.n.dasgupta
 -sumit chakrobarty
+```
 
 #Filters
 
@@ -108,23 +114,29 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
+```
 Hel
 Thi
+```
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
+```
 1001
 1002
 1003
+```
 
 
 cut -d "|" -f 2 file22
 ## OUTPUT
+```
 Ram
  tom
  Joe
+```
 
 cat < newfile 
 ```
@@ -204,8 +216,10 @@ Search for PATTERN in FILEs (or stdin)
 
 grep -w -n world newfile   
 ## OUTPUT
+```
 1:Hello world
 2:hello world
+```
 
 cat < newfile 
 ```
@@ -228,21 +242,26 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
+```
 Hello world
 hello world
-
+```
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
+```
 Hello world
 hello world
+```
 
 
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
+```
 Hello world
 hello world
+```
 
 
 
@@ -253,8 +272,10 @@ hello world
 
 egrep '(world$)' newfile 
 ## OUTPUT
+```
 Hello world
 hello world
+```
 
 
 egrep '(World$)' newfile 
@@ -263,9 +284,11 @@ Linux is best in this World
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
+```
 Hello world
 hello world
 Linux is best in this World
+```
 
 
 egrep '[1-9]' newfile 
@@ -283,15 +306,19 @@ Linux is best in this World
 
 egrep l{2} newfile
 ## OUTPUT
+```
 Hello world
 hello world
+```
 
 
 egrep 's{1,2}' newfile
 ## OUTPUT 
+```
 Linux is world number 1
 Unix is predecessor
 Linux is best in this World
+```
 
 cat > file23
 ```
@@ -333,6 +360,7 @@ sed  -e 's/Ram/Sita/' file23
 
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1001 | Sita | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -341,6 +369,7 @@ sed  -e '2s/Ram/Sita/' file23
 1004 | Sit |  7000 | Dev
 1003 | Joe |  7000 | Developer
 1001 | Ram | 10000 | HR
+```
 
 
 sed  '/tom/s/5000/6000/' file23
@@ -388,6 +417,7 @@ sed -n -e '/tom/,/Joe/p' file23
 
 seq 10 
 ## OUTPUT
+```
 1
 2
 3
@@ -398,13 +428,16 @@ seq 10
 8
 9
 10
+```
 
 
 seq 10 | sed -n '4,6p'
 ## OUTPUT
+```
 4
 5
 6
+```
 
 
 seq 10 | sed -n '2,~4p'
@@ -414,23 +447,28 @@ sed: no address after comma
 
 seq 3 | sed '2a hello'
 ## OUTPUT
+```
 1
 2
 hello
 3
+```
 
 
 seq 2 | sed '2i hello'
 ## OUTPUT
+```
 1
 hello
 2
-
+```
 seq 10 | sed '2,9c hello'
 ## OUTPUT
+```
 1
 hello
 10
+```
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
