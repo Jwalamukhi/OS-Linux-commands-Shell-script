@@ -434,16 +434,20 @@ hello
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
+```
 $1001 | Ram | 10000 | HR
 $1002 | tom |  5000 | Admin
 $1003 | Joe |  7000 | Developer
+```
 
 
 sed -n '2,4{s/$/*/;p}' file23
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR*
 1002 | tom |  5000 | Admin*
 1003 | Joe |  7000 | Developer*
+```
 
 #Sorting File content
 cat > file21
@@ -456,11 +460,13 @@ cat > file21
 ``` 
 sort file21
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 1004 | Sit |  7000 | Dev
 1005 | Sam |  5000 | HR
+```
 
 cat > file22
 ```
@@ -473,17 +479,19 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 1005 | Sam |  5000 | HR
 1004 | Sit |  7000 | Dev
-
+```
 
 #Using tr command
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
+```
 1001 | RAM | 10000 | HR
 1001 | RAM | 10000 | HR
 1002 | TOM |  5000 | ADMIN
@@ -493,6 +501,7 @@ cat file23 | tr [:lower:] [:upper:]
 1003 | JOE |  7000 | DEVELOPER
 1001 | RAM | 10000 | HR
 cat < urllist.txt
+```
 ```
 www. yahoo. com
 www. google. com
@@ -507,21 +516,25 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
+```
 www.yahoo.com
 www.google.com
 www.mrcet....com
+```
 
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
+```
 www.yahoo.com
 www.google.com
 www.mrcet.com
-
+```
 
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
+```
 bench.py
 file21
 file22
@@ -531,6 +544,7 @@ hello.js
 newfile
 readme.txt
 urllist.txt
+```
 
 mkdir backupdir
  
